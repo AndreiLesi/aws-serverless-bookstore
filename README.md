@@ -85,23 +85,23 @@ Afterwards, change `const apiGatewayUrl = '<<terraform.output.api_gateway_url>>'
 
 The terraform scripts will do the following:
 1. **DynamoDB**:
-   - Create a `Books` and `Orders` tables in DynamoDB.
-   - Set up a Global Secondary Index for `customer_id` on the `Orders` table.
+   - Creates a `Books` and `Orders` tables in DynamoDB.
+   - Sets up a Global Secondary Index for `customer_id` on the `Orders` table.
 
 2. **API Gateway**:
-   - Create a RESTful APIs for handling book and order operations.
-   - Integrate these APIs with the respective Lambda functions.
+   - Creates a RESTful APIs for handling book and order operations.
+   - Integrates these APIs with the respective Lambda functions.
 
 3. **Lambda Functions**:
-   - Deploy Lambda functions to handle the logic for book searching, book creation, order retrieval, and order creation.
+   - Deploys Lambda functions to handle the logic for book searching, book creation, order retrieval, and order creation.
 
 4. **S3 Hosting**:
-   - Create a S3 Bucket where the HTML files will be uploaded.
-   - Configure the S3 bucket for static website hosting.
+   - Creates a S3 Bucket where the HTML files will be uploaded.
+   - Configures the S3 bucket for static website hosting.
 
 5. **Permissions and IAM Roles**:
-   - Ensure that the Lambda functions have the necessary IAM roles to interact with DynamoDB.
-   - Set up CORS on API Gateway to allow requests from the S3-hosted frontend.
+   - Ensures that the Lambda functions have the necessary IAM roles to interact with DynamoDB.
+   - Sets up CORS on API Gateway to allow requests from the S3-hosted frontend.
 
 ### Usage
 
