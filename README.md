@@ -8,7 +8,7 @@ The **Serverless Bookstore** project is a web-based application that allows user
 Note: See `/images/README.md`for more photo examples
 ### Architecture
 
-- **DynamoDB**: Stores book and order data. The primary table has `id` as the partition key. A Global Secondary Index (GSI) is used for querying orders by `customer_id`.
+- **DynamoDB**: Stores book and order data.
 
   
 - **S3**: Hosts the static website, serving HTML, CSS, and JavaScript files.
@@ -81,7 +81,7 @@ terraform apply
 ```
 **Note:** In case there are any errors reapply everything and the deployment should finish the second time. (The reason is a race condition which even with depends_on isnt solved)
 
-Afterwards change `const apiGatewayUrl = '<<terraform.output.api_gateway_url>>'` in line 55 in `frontend/index.html` with the output of the terraform variable. Then login into the `AWS Console` and upload `frontend/index.html`to the S3 Bucket `serverless-bookstore-uuid`. The deployment is now complete.
+Afterwards, change `const apiGatewayUrl = '<<terraform.output.api_gateway_url>>'` in line 55 in `frontend/index.html` with the output of the terraform variable. Then login into the `AWS Console` and upload `frontend/index.html`to the S3 Bucket `serverless-bookstore-uuid`. The deployment is now complete.
 
 The terraform scripts will do the following:
 1. **DynamoDB**:
